@@ -63,6 +63,8 @@ $total = 0;
 
 <h2 align="center">Your Cart</h2>
 
+<?php if(mysqli_num_rows($query) > 0) { ?>
+
 <table>
 
 <tr>
@@ -143,6 +145,20 @@ Remove
 Total: ৳ <?php echo $total; ?>
 </h3>
 
+<?php } else { ?>
+
+<div style="text-align:center; margin-top:50px;">
+
+    <h2>Your Cart is Empty</h2>
+
+    <p>
+        Looks like you haven't added any products yet.
+    </p>
+
+</div>
+
+<?php } ?>
+
 <div style="text-align:center; margin-top:20px;">
 
     <a href="home.php">
@@ -154,7 +170,9 @@ Total: ৳ <?php echo $total; ?>
         ">
             Continue Shopping
         </button>
+
     </a>
+
 </div>
 
 <script src="assets/js/cart.js"></script>
